@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const promise = new Promise((resolve, reject) => {
+            reject("failure")
+        })
+        promise.then(res => {
+                console.log('成功回调~');
+            }
+        ).catch(err => {
+            console.log('回调失败~', err);
+        })
+        promise.catch(err => {
+            console.log('回调失败~', err);
+        })
+        promise.catch(err => {
+            console.log('回调失败~', err);
+        })
+    </script>
+</body>
+
+</html>

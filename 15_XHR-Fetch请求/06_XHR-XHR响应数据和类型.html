@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1创建对象
+        const xhr = new XMLHttpRequest()
+        //2.load 监听数据加载完成
+        xhr.onload = function () {
+            // console.log(xhr.response);//普通文本
+            //文本响应数据
+            // console.log(xhr.responseText);
+            console.log(xhr.responseXML);
+            // const resJSON = JSON.parse(xhr.response)
+            // console.log(resJSON);
+        }
+        //3.告知xhr的返回的数据类型（json类型）
+        // xhr.responseType = "text";默认
+        // xhr.responseType = "json";
+        // xhr.responseType = "xml";
+
+
+        //4配置网络请求
+        //4.1、http://123.207.32.32:8000/home/multidat  (json)
+        // xhr.open("get", "http://123.207.32.32:8000/home/multidata")
+        // xhr.open("get", "http://123.207.32.32:1888/01_basic/hello_json")
+        // xhr.open("get", "http://123.207.32.32:1888/01_basic/hello_text")
+        xhr.open("get", "http://123.207.32.32:1888/01_basic/hello_xml")
+
+        //4.2 发送网络请求
+        xhr.send()
+
+    </script>
+</body>
+
+</html>

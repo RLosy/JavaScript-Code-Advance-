@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1创建对象
+        const xhr = new XMLHttpRequest()
+        //2.load 监听数据加载完成
+        xhr.onload = function () {
+            // console.log(xhr.response);
+            // console.log(xhr.status,xhr.statusText);
+            //根据http的状态码进行监听
+            if (xhr.status > 200 & xhr.status < 300) {
+                console.log(xhr.response);
+            } else {
+                console.log(xhr.status, xhr.statusText);
+            }
+        }
+        //3.告知xhr的返回的数据类型（json类型）
+        xhr.responseType = "json"
+
+        //4配置网络请求
+        xhr.open("get", "http://123.207.32.32:8000/home/multidata") //200 ok
+        // xhr.open("get", "http://123.207.32.32:8000/abc")// 404 找不到资源
+
+        //4.2 发送网络请求
+        xhr.send()
+
+    </script>
+</body>
+
+</html>

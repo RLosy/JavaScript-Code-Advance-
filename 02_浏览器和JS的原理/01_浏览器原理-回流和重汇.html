@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        一、理解回流
+        第一次确定节点的大小和位置，称之为布局
+        之后对节点的大小，位置修改重新计算称之为回流
+        二、什么情况下引起回流？
+        1.dom结构发生改变（添加新的节点或者移除节点）
+        2.改变了布局（修改了width，height，padding，font-size等值）
+        3.窗口resize
+        4.调用getComputerStyle方法获取尺寸，位置信息
+        三、理解重绘
+        1.第一次渲染内容称之为绘制
+        2.之后重新渲染称之为重绘
+        什么情况下会引起重绘
+        修改背景色，文字颜色，边框颜色，样式
+
+
+        开发中尽量避免发生回流：
+        1.修改样式时尽量一次性修改
+        通过cssText修改，比如通过添加class修改
+        2.尽量避免频繁的操作DOM
+        我们可以在一个documentFragment或者父元素中将要操作的dom操作完成，再一次性的操作
+        3.尽量避免通过getComputedStyle获取尺寸，位置等信息
+        4.对某些元素使用position的absolute或者fixed
+        并不是不会引起回流，而是开销相对较小，不会对其他元素造成影响 
+
+     -->
+</body>
+</html>

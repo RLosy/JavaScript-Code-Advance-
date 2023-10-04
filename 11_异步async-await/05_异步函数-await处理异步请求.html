@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function requestDate(url) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // resolve(url)
+                    reject("error mesage")
+                }, 2000)
+            })
+        }
+        async function getData() {
+            try {
+                const rest1 = await requestDate("lyd")
+                console.log('rest1:', rest1);
+                const rest2 = await requestDate(rest1 + "lisa")
+                console.log('rest2:', rest2);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        // getData().catch(err => {
+        //     console.log('error:', err);
+
+        // })
+        getData()
+    </script>
+</body>
+
+</html>

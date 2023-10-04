@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //剩余参数：rest parameters
+        function foo(num1, num2, ...otherNums) {
+            //otherNums 数组
+            // console.log(arguments);
+            console.log(otherNums);
+
+        }
+        foo(20, 30, 40, 50)
+
+        //只有剩余参数
+        function bar(...args) {
+            console.log(args);
+        }
+        bar(11, 22, 33)
+        //注意：剩余参数需要写到其他的参数最后
+
+
+    </script>
+</body>
+
+</html>

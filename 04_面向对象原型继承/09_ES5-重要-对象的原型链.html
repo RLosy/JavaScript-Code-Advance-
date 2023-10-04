@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    //对象字面量本质
+    // var obj = {} // 等于 var obj  = new Object（）
+    
+        var obj = {
+            name: "lyd",
+            age: 23
+
+        }
+        //查找顺序
+        //1.obj上面找
+        //2.obj_proto_
+        //3.obj._proto_._proto_.null->上面查找（undefined）
+        console.log(obj.message);
+        
+
+    </script>
+</body>
+
+</html>

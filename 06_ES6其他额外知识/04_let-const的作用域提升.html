@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.var 声明的变量会进行作用域的提升
+        // console.log(message);
+        // var message = "hello world"
+
+        //2.let/const声明的变量
+        console.log(address); //报错
+        let address = "杭州市"
+        const info = {}    //有被提前创建 但是不能被访问
+        //let/const 有没有作用域的提升 什么是作用域的提升
+
+        //作用域提升：在声明变量的作用域中，如果这个变量可以在声明之前被访问，那么我们可以称之为作用域提升
+        // let、const没有进行作用域提升，但是会在解析阶段被创建出来
+
+
+
+    </script>
+</body>
+
+</html>

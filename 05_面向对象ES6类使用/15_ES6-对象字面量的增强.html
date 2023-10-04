@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.属性增强
+        var name = "lyd"
+        var age = 18
+
+        var key = "address" + " city"
+        // var obj = {
+        //     name: "name",
+        //     age: age,
+        // }
+        var obj = {
+            // 1.属性的增强
+            name,   //key = value
+            age,
+            //2.方法的增强
+            runnig: function () {
+                console.log(this); //Object
+            },
+
+            fly() {
+                console.log(this);//Object
+
+            }, //绑定this
+
+            eating: () => {
+                console.log(this); //window
+
+            },
+            //3.计算属性名
+            // addres: "广州"
+            [key]: "杭州" //key=address
+
+        }
+        console.log(obj);
+
+        // module.exports = {
+        //     name,
+        //     age,
+        // }
+        function foo() {
+            var message = "hello world"
+            var info = "my name is lyd"
+            return {
+                // message: message,
+                // info: info
+                message,
+                info,
+            }
+        }
+        var result = foo()
+        console.log(result.message, result.info);
+
+    </script>
+</body>
+
+</html>

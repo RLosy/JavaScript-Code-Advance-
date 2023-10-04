@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var names = ["abc", "cba", "", "nba", "mba"]
+        var obj = { name: "lyd", age: 19, height: 1.65 }
+
+        //1.数组解构
+
+        // var name1 = names[0]
+        // var name1 = names[1]
+        // var name1 = names[2]
+        //1.1基本使用
+        // var [name1, name2, name3] = names
+        // console.log(name1, name2, name3);
+        //1.2 顺序问题：严格的顺序
+        // var [name1, ,name3,] = names
+        //  console.log(name1, name3);
+        //1.3解构出数组
+        // var [name1,name2,...newNames] = names
+        // console.log(name1,name2,newNames);
+        //1.4 解构的默认值
+        var [name1, name2, name3 = "default"] = names
+        console.log(name1, name2, name3);
+
+        //2.对象的解构
+        // var name = obj.name
+        // var age = obj.age
+        // var height = obj, height
+        //2.1基本使用
+        // var { name, age, height } = obj
+        // console.log(obj);
+        //2.2对象的解构没有顺序，根据key解构
+        // var { height, age, name } = obj
+        // console.log(obj);
+        //2.3对变量进行重命名
+        var { height: lydHeight, age: lydAge, name: lydName } = obj
+        console.log(lydHeight, lydAge, lydName);
+        //2.4 默认值
+        var {
+            name: lydName,
+            age: lydAge,
+            height: lydHeight,
+
+            address: lydAddress = "杭州"
+
+        } = obj
+        console.log(lydHeight, lydAge, lydName, lydAddress);
+
+        //2.5 对象的剩余内容
+        // var{
+        //     name,
+        //     age,
+        //     ...newObj
+        //  } = obj
+
+        //  console.log(newObj);
+
+        //应用：在函数中
+        // function getPosition(position) {
+        //     console.log(position.x, position.y);
+        // }
+        function getPosition({ x, y }) {
+            console.log(x, y);
+        }
+
+        getPosition({ x: 10, y: 20 })
+
+    </script>
+</body>
+
+</html>

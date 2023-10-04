@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Foo(name, age) {
+            this.name = name
+            this.age = age
+        }
+        Foo.prototype.address = "杭州市"
+        Foo.prototype.message = "hello world"
+
+
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            running() {
+                console.log(this.name + "running~");
+            }
+            eating() {
+                console.log(this.name + "eating~");
+            }
+        }
+        var p = new Person()
+
+        // 1.在内存中创建一个新的对象（空对象）
+        // 2.这个对象内部的[[prototype]]属性会被赋值为该类的prototype属性
+        // 3.构造函数内部的this，会指向创建出来的新对象
+        // 4.执行构造函数的内部代码（函数体代码）
+        // 5.如果构造没有返回非空对象，则返回创建出来的新对象
+
+    </script>
+</body>
+
+</html>

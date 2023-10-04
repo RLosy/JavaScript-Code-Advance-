@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function foo(x, y, z) {
+        //     console.log(x + y + z);
+        // }
+        // foo(1, 2, 3)
+
+        //foo不是一个柯里化的函数，所以目前是不能这样调用的
+        // foo(x)(y)(z) //报错
+
+        //柯里化过程
+        // function foo(x) {
+        //     return function (y) {
+        //         return function (z) {
+        //             console.log(x + y + z);
+
+        //         }
+        //     }
+        // }
+        // foo(10)(20)(30)
+
+        //另外一个写法：箭头函数
+        var foo = x => y => z => console.log(x + y + z)
+        foo(10)(20)(30)
+
+
+
+    </script>
+</body>
+
+</html>

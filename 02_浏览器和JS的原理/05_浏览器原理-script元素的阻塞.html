@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    /*1. script元素和页面解析的关系： */
+    /* 事实上，浏览器在解析html的过程中，遇到了script元素是不能继续构建dom树的 */
+    /* 它会停止继续构建，首先下载JavaScript代码，并且执行JavaScript的脚本 */
+    /* 只有等到JavaScript脚本执行结束后，才会继续解析html，构建dom树 */
+
+    /*2. 为什么： */
+    /* JavaScript操作DOM Tree ,并且修改dom
+    如果我们等到dom树构建完成并且渲染再执行JavaScript，会造成严重的回流和重绘，影响页面的性能
+    所以会在遇到script元素时，优先下载和执行JavaScript代码，再继续构建dom树
+     */
+     
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+    }
+</style>
+<body>
+    <div class="box"></div>
+    <script>
+        
+    </script>
+</body>
+</html>

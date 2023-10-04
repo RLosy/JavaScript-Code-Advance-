@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person { }
+        class Student extends Person { }
+
+        //1.创建一个新的类，继承Array进行扩展
+        // class LdArray extends Array {
+        //     //扩展方法
+        //     get lastItem() {
+        //         return this[this.length - 1]
+        //     }
+        //     get firstItem() {
+        //         return this[0]
+        //     }
+        // }
+        // var arr = new LdArray(1, 2, 4)
+        // console.log(arr);
+        // console.log(arr.length);
+        // console.log(arr.firstItem);
+        // console.log(arr.lastItem);
+        //2.直接对Array进行扩展
+        Array.prototype.lastItem = function(){
+                return this[this.length - 1]
+        }
+        var arr = new Array(1, 2, 4)
+         console.log(arr.lastItem());
+
+
+    </script>
+</body>
+
+</html>

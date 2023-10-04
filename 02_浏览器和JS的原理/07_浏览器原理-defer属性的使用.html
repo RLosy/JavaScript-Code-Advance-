@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"> app</div>
+    <div id="title"> title</div>
+    <div id="nav"> nav</div>
+    <!-- 脚本会由浏览器来进行下载，但是不会阻塞dom tree的构建过程 -->
+    <!-- 等待DOM tree 构建完成，在domContentLoaded事件之前先执行defer中的代码 -->
+    <script src="./text.js" defer> </script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            console.log("DOMContentLoaded");
+        })
+    </script>
+
+
+
+    <h2>hahhaahahhh</h2>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"> app</div>
+    <dic class="box"></dic>
+    <div id="title"> title</div>
+    <div id="nav"> nav</div>
+    <!-- 浏览器不会因async脚本而阻塞
+    基本不保证顺序，它是独立下载，独立运行，不会等待其他脚本
+    async不能保证在DOMContentLoaded先执行
+    -->
+    <script src="./text.js" async> </script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            console.log("DOMContentLoaded");
+        })
+    </script>
+
+
+    <h2>hahhaahahhh</h2>
+</body>
+
+</html>

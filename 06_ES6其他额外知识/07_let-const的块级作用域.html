@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //在es5之前，只有全局作用域和函数只有自己的作用域
+        //代码块
+        // function foo(){
+        //     var message = "hello world"
+        //     console.log('hello world');
+
+        // }
+        // if(true){
+        //     var message = "hello world"
+        // }
+        // console.log(message);
+
+        //2.从es6开始 let、const,function.class有块级作用域
+
+
+
+            console.log(message); //undefined
+            // foo()      //不能访问
+        {
+            var message = "hello"
+            let age = 18
+            const height = 1.65
+            class Person { }
+
+            function foo() {
+                console.log('foo function');
+
+            }
+        }
+        // console.log(age);
+        // const p = new Person()
+
+        // foo()   //可以访问
+
+
+
+
+
+    </script>
+</body>
+
+</html>

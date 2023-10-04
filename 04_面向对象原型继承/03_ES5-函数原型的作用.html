@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Foo() {
+            //1.创建空对象
+            //2.将Foo的prototype显示原型赋值给空对象的隐式—_proto_ 但是不相等
+            //3.
+        }
+        // console.log(Foo.prototype);
+        var f1 = new Foo()
+        var f2 = new Foo()
+
+        console.log(f1._proto_ === Foo.prototype); //false
+        console.log(f1._proto_ === f2.prototype);//true
+        console.log(f2._proto_ === Foo.prototype);//false
+        console.log(f2.prototype === Foo.prototype);
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.创建一个promise对象
+        const promise = new Promise((reslove, reject) => {
+
+            //注意：promise的状态一旦被确定下来，就不会再更改，也不能再执行某个回调函数来改变状态
+            //1.pending 待定状态
+            //调用resolve会成功调用then
+            //2.fulfilled 兑现状态 调用 resolove
+            // reslove()
+            // 调用reject会失败的回调err
+            // 3. rejected 拒绝状态 调用 reject
+            reject()
+
+        })
+
+
+        promise.then((res) => {
+            console.log('成功的回调');
+
+        }).catch(err => {
+            console.log('失败的回调');
+
+        })
+        //exector 是在创建时需要回调一个函数，这个回调函数会被立即执行，并且传入两个参数
+        const promise2 = new Promise((reslove, reject) => {
+            console.log('executor代码   ');
+
+        })
+
+    </script>
+</body>
+
+</html>

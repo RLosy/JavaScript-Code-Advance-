@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var n = 100
+        // function foo() {
+        //     n = 200
+        // }
+        // foo()
+        // console.log(n);
+
+        // function foo(){
+        //     console.log(n);
+        //     var n = 200
+        //     console.log(n);
+        // }
+        // var n = 100
+        // foo()
+
+        // var a = 100
+        // function foo() {
+        //     console.log(a);
+        //     return
+        //     var a = 100
+        // }
+        // foo()
+
+        // function foo() {
+        //     var a = b = 100
+        // }
+        // foo()
+        // console.log(a);
+        // console.log(b);
+
+        var n = 100
+
+        function foo1() {
+            console.log(n);
+        }
+
+        function foo2() {
+            var n = 200
+            console.log(n);
+            foo1()
+        }
+        foo2()
+        console.log(n);
+
+
+        function makeAdder(count) {
+            return function (num) {
+                return count + num
+            }
+        }
+        var add10 = makeAdder(10)
+        console.log(add10(5));
+
+
+    </script>
+</body>
+
+</html>

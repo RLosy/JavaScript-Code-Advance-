@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, age) {
+
+                this.name = name;
+                this.age = age
+            }
+            eating() {
+                console.log('eating');
+            }
+            running() {
+                console.log('running');
+            }
+
+        }
+        class Student extends Person {
+            constructor(name, age, sno, score) {
+                // this.name = name;
+                // this.age = age
+
+                //一定在使用this之前以及返回对象之前
+                super(name, age)
+
+                this.sno = sno
+                this.score = score
+            }
+            studying() {
+                console.log('studying');
+
+            }
+            // eating() {
+            //     console.log('eating');
+            // }
+            // running() {
+            //     console.log('running');
+
+            // }
+        }
+        class Teacher extends Person {
+            constructor(name, age, title) {
+                // this.name = name;
+                // this.age = age
+                //在子（派生）类的构造函数中使用this或者返回默认对象之前，必须先通过super调用父类的构造函数！
+                //  super的使用位置有三个：子类的构造函数、实例方法、静态方法；
+                super(name, age);
+                this.title = title
+
+            }
+            teaching() {
+                console.log('teaching');
+            }
+            // eating() {
+            //     console.log('eating');
+            // }
+            // running() {
+            //     console.log('running');
+            // }
+        }
+        var teacher1 = new Teacher("lyd", 23, 20)
+        console.log(teacher1);
+        console.log(teacher1.eating);
+
+
+
+    </script>
+</body>
+
+</html>

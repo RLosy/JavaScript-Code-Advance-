@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "rosy",
+            age: 23
+        }
+        //1.获取对象属性描述符
+        // console.log(Object.getOwnPropertyDescriptor(obj,"name"));
+        // console.log(Object.getOwnPropertyDescriptors(obj));
+
+        //2.禁止扩展对象的属性
+        // Object.preventExtensions(obj)
+        // obj.address = "杭州市"
+        // console.log(obj);
+
+        //3.密封对象 不能进行配置
+        // Object.seal(obj)
+        // delete obj.name;
+        // console.log(obj);
+
+        //冻结对象，不能进行写入
+        Object.freeze(obj)
+        obj.name = "lisa"
+        console.log(obj);
+
+    </script>
+</body>
+
+</html>

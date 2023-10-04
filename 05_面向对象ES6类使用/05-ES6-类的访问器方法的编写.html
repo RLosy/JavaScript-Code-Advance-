@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            //程序员之间的约定，以_开头的属性和方法，是不在外界访问
+            constructor(name, age) {
+                this._name = name
+            }
+            set name(value) {
+                console.log('设置name');
+                this._name = value
+            }
+            get name() {
+                console.log('获取name');
+                return this._name
+            }
+        }
+        var p1 = new Person("lyd", 23)
+        p1.name = "lisa" ;
+        console.log(p1.name);
+        // console.log(p1._name);
+        
+
+
+    </script>
+</body>
+
+</html>

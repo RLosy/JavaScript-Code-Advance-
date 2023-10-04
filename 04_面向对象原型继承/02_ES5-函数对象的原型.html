@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {}
+
+        function foo() { }
+        //将函数看成是一个函数时，它是具备prototype
+        console.log(Object.getPrototypeOf(foo));
+        //函数原型，对象没有
+        console.log(obj.prototype); //undefined
+        
+        console.log(foo.prototype); //object
+
+    </script>
+</body>
+
+</html>

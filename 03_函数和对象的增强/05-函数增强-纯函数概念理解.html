@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(num1, num2) {
+            return num1 + num2
+        }
+
+
+
+        var address = "杭州市"
+        function printInfo(info) {
+            console.log(info.name, info.age, info.message);
+            info.flag = "打印结束";
+            address = info.message;
+
+        }
+        var obj = {
+            name: "lyd",
+            age: "18",
+            message: "啊啊啊啊啊啊啊啊啊"
+        }
+        printInfo(obj)
+        //修改原来的对象属性
+        console.log(obj);
+
+
+
+    </script>
+</body>
+
+</html>

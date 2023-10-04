@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/inherit-utils.js"></script>
+    <script>
+
+        var obj = {
+            name:"lyd",
+            age:18
+        }
+        var info = createObject(obj)
+        info.address = "杭州市"
+        info.intro  = "你好"
+        console.log(info.name,info.address);
+        console.log(info);
+        //1.hasOwnProperty 对象是否有某一个属于自己的属性（不是在原型上的属性）
+        console.log(info.hasOwnProperty("name")); //false
+        console.log(info.hasOwnProperty("address")); //true
+
+        //2.in 操作符 判断某个属性是否在某个对象或者对象的原型上
+        console.log("name" in info); //true
+        console.log("address" in info); //true
+
+        //3.遍历所有的属性包括对象原型上面的
+        for(var key in info){
+            console.log(key);
+            
+        }
+        //instanceof 对象和类（构造函数）之间的关系
+        function Person(){}
+        function Student(){}
+
+        inherit(Student,Person)
+
+        var stu = new  Student()
+        console.log(stu instanceof Student);
+        console.log(stu instanceof Person);
+        console.log(stu instanceof Object);
+        console.log(stu instanceof Array); //false
+
+        //isPrototypeOf  检测对象是否出现在实例的对象的原型链上
+        console.log(Student.prototype.isPrototypeOf(stu)); //true
+        console.log(Person.prototype.isPrototypeOf(stu)); //true
+        console.log(Array.prototype.isPrototypeOf(stu)); //false
+
+    </script>
+</body>
+</html>

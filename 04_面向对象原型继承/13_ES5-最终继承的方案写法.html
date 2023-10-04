@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./js/inherit-utils.js"></script>
+    <script>
+      
+        function Person(name, age, height) {
+            this.name = name;
+            this.age = age;
+            this.height = height;
+        }
+        Person.prototype.running = function () {
+            console.log("running~");
+        }
+        Person.prototype.eating = function () {
+            console.log("eating~");
+        }
+        function Student(name, age, height, sno, score) {
+            Person.call(this, name, age, height)
+            this.sno = sno;
+            this.score = score
+        }
+        inherit(Student, Person);
+        var stu1 = new Student("lisa", 25, 1.65, 20, 100)
+        var stu2 = new Student("rosy", 25, 1.68, 10, 200)
+        console.log(stu1,stu2);
+    
+    </script>
+</body>
+
+</html>

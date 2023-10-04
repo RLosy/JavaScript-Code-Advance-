@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            running() {
+                console.log("running");
+            }
+            eating() {
+                console.log("eating");
+            }
+            static sleeping() {
+                console.log("static animal sleep");
+            }//静态方法现在不能继承了
+        }
+
+        class Dog extends Animal {
+            //子类重写父类方法
+            eating() {
+                //调用父类的方法
+                super.eating()
+                console.log("狗吃骨头");
+
+            }
+
+
+        }
+        var dog = new Dog()
+        console.log(dog.eating());
+        console.log(dog.running());
+
+        console.log(dog.sleeping());
+
+
+
+    </script>
+</body>
+
+</html>

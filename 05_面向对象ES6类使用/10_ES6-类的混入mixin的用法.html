@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //javascript 只支持单继承（不支持多继承）
+        function mixinAnimal(BaseClass) {
+          return  class extends BaseClass {
+                running() { }
+            }
+        }
+
+        function mixinRunner(BaseClass){
+            return class extends BaseClass{
+                flying(){
+                    console.log('flying~');
+                    
+                }
+            }
+        }
+
+        class Bird{
+            eating(){
+                console.log('吃');
+                
+            }
+        }
+        // var NewBird = mixinRunner(mixinAnimal(Bird))
+       
+        var bird = new NewBird()
+        bird.flying()
+        bird.running()
+        bird.eating()
+
+
+        class Flying {
+            flying() { }
+        }
+        class Bird extends Animal {
+        }
+
+        Object.assign(Bird.prototype(mixinRunner(mixinAnimal)))
+
+
+    </script>
+</body>
+
+</html>

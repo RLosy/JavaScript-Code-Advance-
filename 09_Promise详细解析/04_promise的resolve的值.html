@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const p = new Promise(() => {
+        //     setTimeout(() => {
+        //         resolve("p的reslove")
+        //     }, 2000)
+
+        // })
+
+        const promise = new Promise((resolve, reject) => {
+            //1.普通值
+            // resolve([
+            //     {name :"macbook" ,price:9998,intro:"有点贵"},
+            //     {name :"iPhone" ,price:99.98,intro:"便宜"}
+            // ])
+            //2.resolve(promise)
+            // 如果resolve的值 本身是promise对象，那么当时 的promise的状态会有传入的promise来决定
+            // resolve(new Promise(() => {
+            // }))
+            // resolve(p)
+
+            // 3.resolve（thenable对象）
+            resolve({
+                name: "lyd",
+                then: function (reslove) {
+                    resolve(111111)
+                }
+            })
+        })
+        promise.then(res => {
+            console.log('then中拿到结果:', res);
+        })
+        promise.catch(err => {
+            console.log('then中拿到结果:', err);
+        })
+    </script>
+</body>
+
+</html>

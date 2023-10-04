@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.创建 XMLHttpRequest
+        const xhr = new XMLHttpRequest()
+        
+        //2.监听状态的改变(加入到宏任务)
+       
+        xhr.onreadystatechange = function () {
+            //1.如果状态不是DONE，直接返回
+            if (xhr.readyState !== XMLHttpRequest.DONE) return
+
+            //2.确定拿到了数据
+            console.log(xhr.response);
+
+        }
+        //3.配置请求open（method，url ，异步：ture：默认）
+        //async:false
+        //实际开发：异步请求，不会阻塞后续js代码
+
+        xhr.open("get", "http://123.207.32.32:8000/home/multidata",false) //同步必须等到有结果放回才执行后续代码
+        //4.发送请求(浏览器帮助发送对应的请求)
+
+        xhr.send()  //不会阻塞后续代码的执行 异步请求
+        //异步 
+        console.log('---------');
+        console.log('++++++++++');
+        console.log('************');
+        
+        
+        
+    </script>
+</body>
+
+</html>

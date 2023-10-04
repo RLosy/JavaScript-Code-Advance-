@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+
+    <script>
+        //  var message = "hello"
+        //     var  age = 18
+        //     function foo(){}
+        //     let address ="杭州市"
+
+        //     {
+        //         var height = 1.65
+
+        //         let title = "教师"
+        //         let info ="我爱你"
+        //     }
+
+        // var btnEls = document.querySelectorAll("button")
+        // for (var i = 0; i < btnEls.length; i++) {
+        //     var btnEl = btnEls[i]
+        //     btnEl.index = i
+        //     btnEl.onclick = function(){
+        //         console.log(`点击了${this.index}按钮`);
+        //     }
+        // }
+
+        // var btnEls = document.querySelectorAll("button")
+        // for (var i = 0; i < btnEls.length; i++) {
+        //     var btnEl = btnEls[i]
+
+        //         (function (m) {
+        //             btnEl.onclick = function () {
+        //                 console.log(`点击了${m}按钮`);
+        //             }
+        //         })(i)
+        // }
+
+
+        const btnEls = document.querySelectorAll("button")
+        for (let i = 0; i < btnEls.length; i++) {
+            var btnEl = btnEls[i]
+            
+            btnEl.onclick = function(){
+                console.log(`点击了${i}按钮`);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person() {
+
+        }
+        // Person.prototype.message = "hello"
+        // Person.prototype.info = { name: "lisa", age: "18" }
+        //一次性添加
+        Person.prototype = {
+            message: "你好~",
+            eating: function () { },
+            running: function () { },
+            // constructor: Person
+        }
+        // var p  = new Person()
+        // console.log(p.message);
+
+        //数据属性描述符
+        Object.defineProperty(Person.prototype, "constructor", {
+            enumerable: false,
+            writable: true,
+            configurable: true,
+            value: Person,
+        })
+
+        console.log(Object.keys(Person.prototype)); //Array(constructor:ƒ Array())
+        console.log(Object.prototype);      //Object constructor : ƒ Object()
+ 
+
+
+    </script>
+</body>
+
+</html>

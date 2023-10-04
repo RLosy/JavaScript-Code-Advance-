@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "rosy",
+            age: 18
+        }
+        Object.defineProperty(obj, "name", {
+            configurable: false, //告诉js引擎，obj对象不能被删除（configurable 默认是true）
+            enumerable:false,//告诉js引擎，obj对象的name属性不能枚举(for in /Object.keys())
+            writable:false, //告诉js引擎，obj对象不可写入 只读属性
+            value:"lyd"     //告诉js引擎,返回值这个value
+        }) 
+        delete obj.name
+        console.log(obj.name);
+
+        // Object.defineProperty(obj, "name", {
+        //     enumerable: false, //告诉js引擎，不能被再次修改
+        // })
+
+        Object.defineProperty(obj,"address",{
+
+        })
+        delete obj.address
+        console.log(obj.address);
+
+        console.log(Object.keys(obj));
+
+        obj.name = 'lisa';
+        console.log(obj.name);
+
+
+        
+
+        
+        
+    </script>
+</body>
+
+</html>

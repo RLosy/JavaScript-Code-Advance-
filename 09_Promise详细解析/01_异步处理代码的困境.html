@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.设计这样的一个函数
+        function execCode(counter, successCallback, failureCallback) {
+            //异步任务
+            setTimeout(() => {
+                if (counter > 0) {
+                    let total = 0; //成功的情况
+                    for (let i = 0; i < 100; i++) {
+                        total += i
+                    }
+                    //在某个时刻只需要回调传入函数
+                    successCallback(total)
+                } else {
+                    //失败情况，counter有问题
+                    failureCallback(`${counter}值有问题`)
+                }
+            }, 3000)
+        }
+        //封装异步函数
+        execCode(100, (value) => {
+            console.log('外界监听到汉堡已经做好了' + value)
+        },
+            (err) => {
+                console.log('本次执行失败了', err);
+
+            })
+    </script>
+</body>
+
+</html>

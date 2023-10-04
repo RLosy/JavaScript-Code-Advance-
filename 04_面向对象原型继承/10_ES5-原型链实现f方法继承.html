@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age
+        }
+        Person.prototype.running = function () {
+            console.log(this.name + "跑步");
+        }
+        Person.prototype.eating = function () {
+            console.log(this.name + "吃饭");
+        }
+
+
+
+        function Student(name, age, sno, score) {
+            // this.name = name,
+            // this.age = age,
+            this.sno = sno,
+                this.score = score
+        }
+
+        // Student.prototype.running = function () { 
+        //     console.log("跑步");
+        // }
+        // Student.prototype.eating = function () {
+        //     console.log( "吃饭");
+        //  }
+        // Student.prototype.studying = function () { 
+        //     console.log( "学习");
+        // }
+        //1.创建父类原型对象直接赋值给子类原型对象 
+        var p = new Person()
+        Student.prototype = p
+        //2.在子类对象上添加内容 1，2 步骤顺序不能更改 
+        Student.prototype.studying = function () {
+            console.log("学习");
+        }
+        console.log(p.studying);
+
+
+        var stu1 = new Student("lisa", 18, "nv", 100)
+        console.log(stu1.name, stu1.age, stu1.running);
+
+    </script>
+</body>
+
+</html>

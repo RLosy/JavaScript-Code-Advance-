@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        //1.无法意外的创建全局变量
+        // function foo(){ 
+        //     message = "hello world"
+        // }
+        // foo()
+        // console.log(message);
+
+        //2.发现静默错误
+        var obj = {
+            name: "lyd"
+        }
+        // Object.defineProperties(obj,"name",{
+        //     writable:false,
+        //     configurable:false
+        // })
+        obj.name = "rosy"
+        console.log(obj.name);
+        //4.不能以0开头
+        console.log(0o123);
+        //5.eval函数不能为上层创建变量
+        eval(`var message = "hello world"`)
+        console.log(message);
+        //6.严格模式下，this是不会转成对象类型的
+        function foo() {
+            console.log(this);
+        }
+        foo.apply("abc");
+        foo.apply(123);
+        foo.apply(undefined);
+        foo();
+    </script>
+</body>
+
+</html>
